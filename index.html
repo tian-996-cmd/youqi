@@ -1,0 +1,1827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="陕西省煤田地质集团一三一队油气技术服务公司 — 专业从事钻机施工、修井作业、页岩气井、煤层气井、盐井、水文井等能源钻井技术服务。">
+    <title>一三一队油气技术服务公司</title>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
+    <!-- Google Fonts: Noto Sans SC + Noto Serif SC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS RESET & CUSTOM PROPERTIES
+           ============================================ */
+        :root {
+            /* Color Palette — 工业能源风 + 活泼创意 */
+            --energy-blue:      #1A5276;
+            --energy-dark:      #0D2C40;
+            --accent-orange:    #E67E22;
+            --accent-orange-hv: #D35400;
+            --gold:             #F39C12;
+            --gold-light:       #FDEBD0;
+            --green:            #27AE60;
+            --green-light:      #E8F8F0;
+            --bg-light:         #F4F6F7;
+            --bg-white:         #FFFFFF;
+            --bg-cream:         #FDFAF5;
+            --text-dark:        #1C2833;
+            --text-body:        #5D6D7E;
+            --text-light:       #AAB7C4;
+            --border:           #E5E8EB;
+
+            /* Typography */
+            --font-heading: 'Noto Serif SC', 'STSong', 'SimSun', serif;
+            --font-body:    'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+            /* Spacing */
+            --section-py:   100px;
+            --section-py-m: 60px;
+            --container:    1200px;
+            --nav-height:   72px;
+
+            /* Shadows */
+            --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md:  0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg:  0 8px 40px rgba(0,0,0,0.12);
+            --shadow-nav: 0 2px 20px rgba(0,0,0,0.10);
+
+            /* Borders */
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+
+            /* Transitions */
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+            --dur-fast: 200ms;
+            --dur-normal: 400ms;
+            --dur-slow: 700ms;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-body);
+            background: var(--bg-white);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Skip to content — accessibility */
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background: var(--energy-dark);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: var(--radius-sm);
+            z-index: 10000;
+            transition: top var(--dur-fast);
+        }
+        .skip-link:focus {
+            top: 8px;
+        }
+
+        /* Container */
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Section */
+        .section {
+            padding: var(--section-py) 0;
+        }
+        .section--alt {
+            background: var(--bg-light);
+        }
+
+        /* Section Header */
+        .section__header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section__tag {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .section__title {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .section__title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--gold));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+        .section__subtitle {
+            font-size: 1.05rem;
+            color: var(--text-body);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--nav-height);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            transition: background var(--dur-normal), box-shadow var(--dur-normal);
+        }
+        .nav--scrolled {
+            background: rgba(255,255,255,0.97);
+            box-shadow: var(--shadow-nav);
+            backdrop-filter: blur(12px);
+        }
+        .nav__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .nav__brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            transition: color var(--dur-normal);
+            white-space: nowrap;
+        }
+        .nav--scrolled .nav__brand {
+            color: var(--energy-dark);
+        }
+        .nav__brand i {
+            font-size: 1.6rem;
+            color: var(--accent-orange);
+        }
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav__link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.85);
+            position: relative;
+            padding: 4px 0;
+            transition: color var(--dur-fast);
+        }
+        .nav--scrolled .nav__link {
+            color: var(--text-body);
+        }
+        .nav__link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            border-radius: 1px;
+            transition: width var(--dur-normal) var(--ease-out);
+        }
+        .nav__link:hover,
+        .nav__link--active {
+            color: #fff;
+        }
+        .nav--scrolled .nav__link:hover,
+        .nav--scrolled .nav__link--active {
+            color: var(--energy-blue);
+        }
+        .nav__link:hover::after,
+        .nav__link--active::after {
+            width: 100%;
+        }
+
+        /* Hamburger */
+        .nav__toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+            z-index: 1001;
+        }
+        .nav__toggle span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: #fff;
+            border-radius: 2px;
+            transition: all var(--dur-normal) var(--ease-out);
+        }
+        .nav--scrolled .nav__toggle span {
+            background: var(--energy-dark);
+        }
+        .nav--open .nav__toggle span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+        }
+        .nav--open .nav__toggle span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav--open .nav__toggle span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0D2C40 0%, #1A3A50 30%, #1A5276 60%, #154360 100%);
+        }
+        .hero__canvas {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(13,44,64,0.55) 100%);
+            z-index: 1;
+        }
+        .hero__content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 24px;
+        }
+        .hero__badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.20);
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 4px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(8px);
+            animation: fadeInUp 0.8s var(--ease-out) 0.2s both;
+        }
+        .hero__title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s var(--ease-out) 0.4s both;
+        }
+        .hero__title span {
+            color: var(--accent-orange);
+        }
+        .hero__subtitle {
+            font-size: clamp(1rem, 2.2vw, 1.35rem);
+            color: rgba(255,255,255,0.80);
+            font-weight: 300;
+            margin-bottom: 36px;
+            animation: fadeInUp 0.8s var(--ease-out) 0.6s both;
+        }
+        .hero__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 40px;
+            background: linear-gradient(135deg, var(--accent-orange), #F39C12);
+            color: #fff;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal);
+            animation: fadeInUp 0.8s var(--ease-out) 0.8s both;
+        }
+        .hero__cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(230,126,34,0.35);
+        }
+        .hero__cta i {
+            transition: transform var(--dur-normal);
+        }
+        .hero__cta:hover i {
+            transform: translateX(4px);
+        }
+        .hero__scroll {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.55);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            animation: float 2.5s ease-in-out infinite;
+        }
+        .hero__scroll i {
+            font-size: 1.1rem;
+            animation: bounceDown 1.5s ease-in-out infinite;
+        }
+
+        /* ============================================
+           ABOUT
+           ============================================ */
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about__text h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+        .about__text p {
+            margin-bottom: 16px;
+            color: var(--text-body);
+            line-height: 1.9;
+        }
+        .about__image {
+            background: linear-gradient(135deg, var(--energy-blue), var(--energy-dark));
+            border-radius: var(--radius-lg);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .about__image::before {
+            content: '';
+            position: absolute;
+            inset: 16px;
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: var(--radius-md);
+        }
+        .about__image-inner {
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+            z-index: 1;
+        }
+        .about__image-inner i {
+            font-size: 4rem;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+        }
+        .about__image-inner p {
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        /* Stats */
+        .about__stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        .stat {
+            text-align: center;
+            padding: 28px 16px;
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal);
+        }
+        .stat:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .stat__number {
+            font-family: var(--font-heading);
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: var(--energy-blue);
+            line-height: 1;
+        }
+        .stat__number span {
+            color: var(--accent-orange);
+        }
+        .stat__label {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            margin-top: 8px;
+            font-weight: 500;
+        }
+
+        /* ============================================
+           SERVICES
+           ============================================ */
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .service-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            padding: 40px 28px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal), border-color var(--dur-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-orange), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--dur-slow) var(--ease-out);
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        .service-card__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--green-light);
+            color: var(--green);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            transition: transform var(--dur-normal), background var(--dur-normal), color var(--dur-normal);
+        }
+        .service-card:hover .service-card__icon {
+            transform: scale(1.1) rotate(-5deg);
+            background: var(--energy-blue);
+            color: #fff;
+        }
+        .service-card:nth-child(2) .service-card__icon { background: #FDEBD0; color: var(--accent-orange); }
+        .service-card:nth-child(3) .service-card__icon { background: #E8F0FE; color: #2980B9; }
+        .service-card:nth-child(4) .service-card__icon { background: #FDE8E8; color: #C0392B; }
+        .service-card:nth-child(5) .service-card__icon { background: #F3E8FD; color: #8E44AD; }
+        .service-card:nth-child(6) .service-card__icon { background: #E0F7FA; color: #00838F; }
+
+        .service-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           PROJECTS
+           ============================================ */
+        .projects__counters {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
+        }
+        .counter-item {
+            text-align: center;
+            padding: 32px 16px;
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--dur-normal) var(--ease-out);
+        }
+        .counter-item:hover {
+            transform: translateY(-4px);
+        }
+        .counter-item__icon {
+            font-size: 2.2rem;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+        }
+        .counter-item__number {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--energy-dark);
+            line-height: 1;
+        }
+        .counter-item__unit {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--energy-blue);
+        }
+        .counter-item__label {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            margin-top: 6px;
+        }
+
+        .projects__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .project-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal);
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-card__thumb {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: rgba(255,255,255,0.6);
+        }
+        .project-card__thumb--1 { background: linear-gradient(135deg, #1A5276, #2471A3); }
+        .project-card__thumb--2 { background: linear-gradient(135deg, #0D2C40, #1A5276); }
+        .project-card__thumb--3 { background: linear-gradient(135deg, #1A3A50, #2471A3); }
+        .project-card__body {
+            padding: 24px;
+        }
+        .project-card__body h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .project-card__body .year {
+            font-size: 0.8rem;
+            color: var(--accent-orange);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .project-card__body p {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           EQUIPMENT & TEAM
+           ============================================ */
+        .equipment__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        .equip-card {
+            background: var(--bg-white);
+            border-radius: var(--radius-md);
+            padding: 36px 24px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--dur-normal) var(--ease-out), box-shadow var(--dur-normal);
+            border-top: 4px solid transparent;
+        }
+        .equip-card:nth-child(1) { border-top-color: var(--energy-blue); }
+        .equip-card:nth-child(2) { border-top-color: var(--accent-orange); }
+        .equip-card:nth-child(3) { border-top-color: var(--green); }
+        .equip-card:nth-child(4) { border-top-color: var(--gold); }
+        .equip-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .equip-card__icon {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+        .equip-card:nth-child(1) .equip-card__icon { color: var(--energy-blue); }
+        .equip-card:nth-child(2) .equip-card__icon { color: var(--accent-orange); }
+        .equip-card:nth-child(3) .equip-card__icon { color: var(--green); }
+        .equip-card:nth-child(4) .equip-card__icon { color: var(--gold); }
+        .equip-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+        .equip-card p {
+            font-size: 0.88rem;
+            color: var(--text-body);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           NEWS
+           ============================================ */
+        .news__list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .news-item {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: var(--bg-white);
+            padding: 24px 28px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast);
+            cursor: pointer;
+        }
+        .news-item:hover {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-md);
+        }
+        .news-item__date {
+            flex-shrink: 0;
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--energy-blue), var(--energy-dark));
+            color: #fff;
+            border-radius: var(--radius-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .news-item__date .day {
+            font-size: 1.4rem;
+        }
+        .news-item__date .month {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+        .news-item__content h4 {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+        .news-item__content p {
+            font-size: 0.85rem;
+            color: var(--text-body);
+        }
+        .news__more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-orange);
+            font-weight: 700;
+            margin-top: 24px;
+            transition: gap var(--dur-fast);
+            cursor: pointer;
+        }
+        .news__more:hover {
+            gap: 14px;
+        }
+
+        /* ============================================
+           CONTACT
+           ============================================ */
+        .contact__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .contact__info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
+        .contact__item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .contact__item i {
+            font-size: 1.2rem;
+            color: var(--accent-orange);
+            margin-top: 3px;
+            width: 20px;
+            text-align: center;
+        }
+        .contact__item span {
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .contact__map {
+            background: linear-gradient(135deg, #E5E8EB, #D5D8DC);
+            border-radius: var(--radius-lg);
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+        .contact__map i {
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--energy-dark);
+            color: rgba(255,255,255,0.65);
+            padding: 28px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+        .footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer a {
+            color: var(--accent-orange);
+            font-weight: 500;
+        }
+
+        /* ============================================
+           QR FLOAT BUTTON & MODAL
+           ============================================ */
+        .qr-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--energy-blue), var(--energy-dark));
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 999;
+            box-shadow: 0 6px 24px rgba(26,82,118,0.40);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 3s ease-in-out infinite;
+            transition: transform var(--dur-fast), box-shadow var(--dur-fast);
+        }
+        .qr-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 32px rgba(26,82,118,0.55);
+            animation: none;
+        }
+
+        .qr-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--dur-normal) var(--ease-out);
+        }
+        .qr-modal--open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .qr-modal__overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(13,44,64,0.75);
+        }
+        .qr-modal__body {
+            position: relative;
+            background: var(--bg-white);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px 36px;
+            text-align: center;
+            max-width: 380px;
+            width: 90%;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: transform var(--dur-slow) var(--ease-out);
+        }
+        .qr-modal--open .qr-modal__body {
+            transform: translateY(0);
+        }
+        .qr-modal__close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 4px 8px;
+            transition: color var(--dur-fast);
+        }
+        .qr-modal__close:hover {
+            color: var(--accent-orange);
+        }
+        .qr-modal__body h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .qr-modal__body .qr-hint {
+            font-size: 0.85rem;
+            color: var(--text-body);
+            margin-bottom: 24px;
+        }
+        #qr-code-container {
+            display: inline-block;
+            padding: 16px;
+            border: 2px dashed var(--border);
+            border-radius: var(--radius-md);
+        }
+        #qr-code-container canvas {
+            display: block;
+        }
+        .qr-modal__body .qr-tip {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 16px;
+        }
+        .qr-modal__body .qr-tip i {
+            color: var(--green);
+            margin-right: 4px;
+        }
+
+        /* ============================================
+           BACK TO TOP
+           ============================================ */
+        .back-top {
+            position: fixed;
+            bottom: 104px;
+            right: 32px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--bg-white);
+            color: var(--energy-blue);
+            border: 2px solid var(--border);
+            cursor: pointer;
+            font-size: 1.1rem;
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(12px);
+            transition: all var(--dur-normal) var(--ease-out);
+            box-shadow: var(--shadow-sm);
+        }
+        .back-top--visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+        .back-top:hover {
+            background: var(--energy-blue);
+            color: #fff;
+            border-color: var(--energy-blue);
+        }
+
+        /* ============================================
+           KEYFRAMES
+           ============================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(-10px); }
+        }
+        @keyframes bounceDown {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(8px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50%      { transform: scale(1.05); }
+        }
+
+        /* ============================================
+           SCROLL REVEAL
+           ============================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 100ms; }
+        .reveal-delay-2 { transition-delay: 200ms; }
+        .reveal-delay-3 { transition-delay: 300ms; }
+        .reveal-delay-4 { transition-delay: 400ms; }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+
+        /* ============================================
+           RESPONSIVE — Tablet (768px - 1199px)
+           ============================================ */
+        @media (max-width: 1199px) {
+            .section { padding: var(--section-py-m) 0; }
+            .section__title { font-size: 2rem; }
+            .about__grid { grid-template-columns: 1fr; gap: 36px; }
+            .about__stats { grid-template-columns: repeat(2, 1fr); }
+            .services__grid { grid-template-columns: repeat(2, 1fr); }
+            .projects__counters { grid-template-columns: repeat(2, 1fr); }
+            .projects__grid { grid-template-columns: repeat(2, 1fr); }
+            .equipment__grid { grid-template-columns: repeat(2, 1fr); }
+            .contact__grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           RESPONSIVE — Mobile (< 768px)
+           ============================================ */
+        @media (max-width: 767px) {
+            :root { --nav-height: 60px; }
+
+            .section { padding: var(--section-py-m) 0; }
+            .section__title { font-size: 1.7rem; }
+            .section__header { margin-bottom: 36px; }
+
+            /* Nav */
+            .nav__toggle { display: flex; }
+            .nav__links {
+                position: fixed;
+                inset: 0;
+                flex-direction: column;
+                justify-content: center;
+                gap: 28px;
+                background: rgba(13,44,64,0.97);
+                backdrop-filter: blur(16px);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity var(--dur-normal);
+            }
+            .nav--open .nav__links {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .nav__link {
+                font-size: 1.2rem;
+                color: rgba(255,255,255,0.85);
+            }
+            .nav__link:hover,
+            .nav__link--active {
+                color: var(--accent-orange);
+            }
+
+            /* Hero */
+            .hero__title { font-size: 1.8rem; }
+
+            /* Grids */
+            .about__grid { grid-template-columns: 1fr; }
+            .about__stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .stat { padding: 20px 12px; }
+            .stat__number { font-size: 2rem; }
+            .services__grid { grid-template-columns: 1fr; }
+            .projects__counters { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            .counter-item__number { font-size: 2rem; }
+            .projects__grid { grid-template-columns: 1fr; }
+            .equipment__grid { grid-template-columns: 1fr; }
+            .contact__grid { grid-template-columns: 1fr; }
+
+            /* News */
+            .news-item { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; }
+
+            /* Footer */
+            .footer .container { flex-direction: column; text-align: center; }
+
+            /* Float buttons */
+            .qr-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.3rem; }
+            .back-top { bottom: 84px; right: 20px; width: 38px; height: 38px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">跳转到主内容</a>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="nav" id="navbar" aria-label="主导航">
+        <div class="nav__inner">
+            <a href="#hero" class="nav__brand">
+                <i class="fa-solid fa-oil-well"></i>
+                一三一队 · 油气技术
+            </a>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="#hero" class="nav__link nav__link--active">首页</a></li>
+                <li><a href="#about" class="nav__link">关于我们</a></li>
+                <li><a href="#services" class="nav__link">业务范围</a></li>
+                <li><a href="#projects" class="nav__link">项目案例</a></li>
+                <li><a href="#equipment" class="nav__link">设备团队</a></li>
+                <li><a href="#news" class="nav__link">新闻动态</a></li>
+                <li><a href="#contact" class="nav__link">联系我们</a></li>
+            </ul>
+            <button class="nav__toggle" id="navToggle" aria-label="菜单" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- ============================================
+             HERO
+             ============================================ -->
+        <section class="hero" id="hero">
+            <canvas class="hero__canvas" id="particleCanvas"></canvas>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <p class="hero__badge">陕西省煤田地质集团 · 一三一队</p>
+                <h1 class="hero__title">油气技术服务<span>公司</span></h1>
+                <p class="hero__subtitle">深耕能源钻井 &nbsp;·&nbsp; 服务油气开发 &nbsp;·&nbsp; 守护能源安全</p>
+                <a class="hero__cta" href="#about">
+                    了解更多 <i class="fa-solid fa-arrow-down"></i>
+                </a>
+            </div>
+            <div class="hero__scroll">
+                <span>向下滚动</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- ============================================
+             ABOUT
+             ============================================ -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="section__header reveal">
+                    <p class="section__tag">About Us</p>
+                    <h2 class="section__title">关于我们</h2>
+                    <p class="section__subtitle">陕西省煤田地质集团一三一队旗下专业油气技术服务队伍</p>
+                </div>
+                <div class="about__grid">
+                    <div class="about__text reveal reveal-delay-1">
+                        <h3>扎根能源沃土，服务国家战略</h3>
+                        <p>陕西省煤田地质集团一三一队油气技术服务公司，是一支从事油气井、非常规天然气井钻探与修井作业的专业技术队伍。公司依托集团六十余年的地质勘探积淀，深耕钻机施工、修井作业、页岩气井、煤层气井、盐井、水文井等核心业务。</p>
+                        <p>多年来，我们始终秉承<strong>"安全第一、质量为本、绿色勘探、科技创新"</strong>的发展理念，为陕西及周边省区的能源开发提供优质高效的技术服务，赢得了行业内的广泛认可与信赖。</p>
+                    </div>
+                    <div class="about__image reveal reveal-delay-2">
+                        <div class="about__image-inner">
+                            <i class="fa-solid fa-oil-well"></i>
+                            <p>钻机施工现场实拍</p>
+                            <p style="font-size:0.8rem;opacity:0.5;">（图片占位区域）</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="about__stats">
+                    <div class="stat reveal reveal-delay-1">
+                        <div class="stat__number"><span>60</span>+</div>
+                        <div class="stat__label">年地质勘探积淀</div>
+                    </div>
+                    <div class="stat reveal reveal-delay-2">
+                        <div class="stat__number counter" data-target="500">0</div>
+                        <div class="stat__label">累计完成钻井数</div>
+                    </div>
+                    <div class="stat reveal reveal-delay-3">
+                        <div class="stat__number counter" data-target="120">0</div>
+                        <div class="stat__label">服务客户企业</div>
+                    </div>
+                    <div class="stat reveal reveal-delay-4">
+                        <div class="stat__number counter" data-target="200">0</div>
+                        <div class="stat__label">专业技术人员</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SERVICES
+             ============================================ -->
+        <section class="section section--alt" id="services">
+            <div class="container">
+                <div class="section__header reveal">
+                    <p class="section__tag">Our Services</p>
+                    <h2 class="section__title">业务范围</h2>
+                    <p class="section__subtitle">全方位油气井技术服务，覆盖勘探开发全链条</p>
+                </div>
+                <div class="services__grid">
+                    <div class="service-card reveal reveal-delay-1">
+                        <div class="service-card__icon"><i class="fa-solid fa-oil-well"></i></div>
+                        <h3>钻机施工</h3>
+                        <p>各类油气井、非常规天然气井钻探施工，拥有多种型号钻机设备，可满足不同地层条件的钻井需求。</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-1">
+                        <div class="service-card__icon"><i class="fa-solid fa-gears"></i></div>
+                        <h3>修井作业</h3>
+                        <p>油井、气井维修服务，包括检泵、套管修复、井筒清理、井下事故处理等，快速恢复井位生产能力。</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-2">
+                        <div class="service-card__icon"><i class="fa-solid fa-fire"></i></div>
+                        <h3>页岩气井</h3>
+                        <p>页岩气水平井钻井及压裂改造服务，具备页岩地层水平段钻进和分段压裂的成熟工艺技术。</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-2">
+                        <div class="service-card__icon"><i class="fa-solid fa-industry"></i></div>
+                        <h3>煤层气井</h3>
+                        <p>煤层气勘探开发钻井服务，针对煤层特点采用欠平衡钻井等工艺，保护煤储层渗透性。</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-3">
+                        <div class="service-card__icon"><i class="fa-solid fa-cubes"></i></div>
+                        <h3>盐井施工</h3>
+                        <p>盐矿钻井、卤水井施工服务，在盐岩地层钻井、固井方面积累了丰富的现场经验。</p>
+                    </div>
+                    <div class="service-card reveal reveal-delay-3">
+                        <div class="service-card__icon"><i class="fa-solid fa-droplet"></i></div>
+                        <h3>水文井</h3>
+                        <p>水文地质钻井、地热井施工，涵盖地下水勘查、水文观测孔、地热资源开发井等多种类型。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PROJECTS
+             ============================================ -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section__header reveal">
+                    <p class="section__tag">Projects</p>
+                    <h2 class="section__title">项目案例与成果</h2>
+                    <p class="section__subtitle">用数据说话，用品质证明</p>
+                </div>
+
+                <!-- Counters -->
+                <div class="projects__counters">
+                    <div class="counter-item reveal reveal-delay-1">
+                        <div class="counter-item__icon"><i class="fa-solid fa-arrow-down-wide-short"></i></div>
+                        <div class="counter-item__number"><span class="counter" data-target="80">0</span></div>
+                        <div class="counter-item__unit">万米</div>
+                        <div class="counter-item__label">累计钻探进尺</div>
+                    </div>
+                    <div class="counter-item reveal reveal-delay-2">
+                        <div class="counter-item__icon"><i class="fa-solid fa-database"></i></div>
+                        <div class="counter-item__number"><span class="counter" data-target="3.5">0</span></div>
+                        <div class="counter-item__unit">亿吨</div>
+                        <div class="counter-item__label">累计探明储量</div>
+                    </div>
+                    <div class="counter-item reveal reveal-delay-3">
+                        <div class="counter-item__icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <div class="counter-item__number"><span class="counter" data-target="350">0</span></div>
+                        <div class="counter-item__unit">份</div>
+                        <div class="counter-item__label">完成地质报告</div>
+                    </div>
+                    <div class="counter-item reveal reveal-delay-4">
+                        <div class="counter-item__icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="counter-item__number"><span class="counter" data-target="25">0</span></div>
+                        <div class="counter-item__unit">项</div>
+                        <div class="counter-item__label">省部级奖项</div>
+                    </div>
+                </div>
+
+                <!-- Project Cards -->
+                <div class="projects__grid">
+                    <div class="project-card reveal reveal-delay-1">
+                        <div class="project-card__thumb project-card__thumb--1">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="year">2020 — 2025</p>
+                            <h3>陕北页岩气水平井钻井工程</h3>
+                            <p>承担陕北地区多口页岩气水平井的钻探施工，水平段最长1,500米，完钻井深超4,000米。</p>
+                        </div>
+                    </div>
+                    <div class="project-card reveal reveal-delay-2">
+                        <div class="project-card__thumb project-card__thumb--2">
+                            <i class="fa-solid fa-mountain-city"></i>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="year">2018 — 2024</p>
+                            <h3>渭北煤层气井钻探项目</h3>
+                            <p>完成渭北地区多口煤层气参数井及生产井施工，煤层取心率达95%以上，获得甲方高度评价。</p>
+                        </div>
+                    </div>
+                    <div class="project-card reveal reveal-delay-3">
+                        <div class="project-card__thumb project-card__thumb--3">
+                            <i class="fa-solid fa-water"></i>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="year">2019 — 2024</p>
+                            <h3>关中地热资源勘查钻井</h3>
+                            <p>在关中盆地施工多口地热井，井深2,000-3,500米，水温及水量均达到设计要求，助力清洁能源利用。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             EQUIPMENT & TEAM
+             ============================================ -->
+        <section class="section section--alt" id="equipment">
+            <div class="container">
+                <div class="section__header reveal">
+                    <p class="section__tag">Equipment & Team</p>
+                    <h2 class="section__title">设备与团队</h2>
+                    <p class="section__subtitle">精良装备 + 专业人才，铸就品质工程</p>
+                </div>
+                <div class="equipment__grid">
+                    <div class="equip-card reveal reveal-delay-1">
+                        <div class="equip-card__icon"><i class="fa-solid fa-oil-well"></i></div>
+                        <h3>钻探设备</h3>
+                        <p>拥有 ZJ50、ZJ40、ZJ30 等各型石油钻机及煤层气专用钻机 XX 台套，满足不同井深及井型施工需求。</p>
+                    </div>
+                    <div class="equip-card reveal reveal-delay-2">
+                        <div class="equip-card__icon"><i class="fa-solid fa-tower-observation"></i></div>
+                        <h3>修井设备</h3>
+                        <p>配备 XJ350、XJ250 等修井机及配套设备，可独立完成各类油气水井的大小修作业任务。</p>
+                    </div>
+                    <div class="equip-card reveal reveal-delay-3">
+                        <div class="equip-card__icon"><i class="fa-solid fa-satellite-dish"></i></div>
+                        <h3>测井仪器</h3>
+                        <p>配备先进的综合测井系统、固井质量检测仪等，为钻井及完井提供精确的地球物理数据支持。</p>
+                    </div>
+                    <div class="equip-card reveal reveal-delay-4">
+                        <div class="equip-card__icon"><i class="fa-solid fa-users-gear"></i></div>
+                        <h3>专业团队</h3>
+                        <p>拥有地质、钻井、泥浆、定向、固井等多个专业领域的技术人员 XXX 人，高级工程师 XX 人，技术工人 XXX 人。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             NEWS
+             ============================================ -->
+        <section class="section" id="news">
+            <div class="container">
+                <div class="section__header reveal">
+                    <p class="section__tag">News</p>
+                    <h2 class="section__title">新闻动态</h2>
+                    <p class="section__subtitle">了解油气技术服务公司最新资讯</p>
+                </div>
+                <div class="news__list">
+                    <article class="news-item reveal reveal-delay-1">
+                        <div class="news-item__date">
+                            <span class="day">18</span>
+                            <span class="month">6月</span>
+                        </div>
+                        <div class="news-item__content">
+                            <h4>油气技术服务公司XX钻井项目顺利通过甲方验收</h4>
+                            <p>项目团队克服复杂地层条件，提前15天完成钻井施工，各项指标均达到或超过合同要求。</p>
+                        </div>
+                    </article>
+                    <article class="news-item reveal reveal-delay-2">
+                        <div class="news-item__date">
+                            <span class="day">30</span>
+                            <span class="month">5月</span>
+                        </div>
+                        <div class="news-item__content">
+                            <h4>公司组织开展"安全生产月"系列活动</h4>
+                            <p>围绕"人人讲安全、个个会应急"主题，开展安全知识竞赛、应急演练等多项活动。</p>
+                        </div>
+                    </article>
+                    <article class="news-item reveal reveal-delay-3">
+                        <div class="news-item__date">
+                            <span class="day">15</span>
+                            <span class="month">4月</span>
+                        </div>
+                        <div class="news-item__content">
+                            <h4>公司荣获集团2024年度安全生产先进单位称号</h4>
+                            <p>这是公司连续第三年获此荣誉，体现了公司在安全生产管理方面的持续努力与成效。</p>
+                        </div>
+                    </article>
+                    <article class="news-item reveal reveal-delay-4">
+                        <div class="news-item__date">
+                            <span class="day">10</span>
+                            <span class="month">3月</span>
+                        </div>
+                        <div class="news-item__content">
+                            <h4>油气技术服务公司与XX石油大学签署产学研合作协议</h4>
+                            <p>双方将在非常规油气钻井技术、人才培养等领域开展深度合作，共建实习基地。</p>
+                        </div>
+                    </article>
+                </div>
+                <div style="text-align:center;">
+                    <a class="news__more">
+                        查看更多新闻 <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CONTACT
+             ============================================ -->
+        <section class="section section--alt" id="contact">
+            <div class="container">
+                <div class="section__header reveal">
+                    <p class="section__tag">Contact</p>
+                    <h2 class="section__title">联系我们</h2>
+                    <p class="section__subtitle">期待与您的合作，欢迎随时咨询洽谈</p>
+                </div>
+                <div class="contact__grid">
+                    <div class="contact__info reveal reveal-delay-1">
+                        <h3>联系方式</h3>
+                        <div class="contact__item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>陕西省 XX市 XX区 XX路 XX号</span>
+                        </div>
+                        <div class="contact__item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>029-XXXXXXXX</span>
+                        </div>
+                        <div class="contact__item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>131-oilgas@sxmd.com</span>
+                        </div>
+                        <div class="contact__item">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>周一至周五 &nbsp; 8:00 — 12:00 &nbsp;|&nbsp; 14:00 — 18:00</span>
+                        </div>
+                    </div>
+                    <div class="contact__map reveal reveal-delay-2">
+                        <i class="fa-solid fa-map"></i>
+                        <p>地图加载区域</p>
+                        <p style="font-size:0.8rem;opacity:0.5;">（可嵌入百度/高德地图）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <span>&copy; 2025 陕西省煤田地质集团一三一队油气技术服务公司. All Rights Reserved.</span>
+            <span><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">陕ICP备XXXXXXXX号-X</a></span>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         QR CODE FLOATING BUTTON
+         ============================================ -->
+    <button class="qr-float" id="qrFloat" aria-label="查看二维码">
+        <i class="fa-solid fa-qrcode"></i>
+    </button>
+
+    <!-- QR Modal -->
+    <div class="qr-modal" id="qrModal" role="dialog" aria-modal="true" aria-label="扫码分享">
+        <div class="qr-modal__overlay" id="qrOverlay"></div>
+        <div class="qr-modal__body">
+            <button class="qr-modal__close" id="qrClose" aria-label="关闭">&times;</button>
+            <h3><i class="fa-solid fa-mobile-screen"></i> 扫码查看</h3>
+            <p class="qr-hint">扫描二维码，在手机上浏览本页面</p>
+            <div id="qr-code-container"></div>
+            <p class="qr-tip"><i class="fa-solid fa-circle-check"></i> 支持微信、浏览器扫码</p>
+        </div>
+    </div>
+
+    <!-- ============================================
+         BACK TO TOP
+         ============================================ -->
+    <button class="back-top" id="backTop" aria-label="回到顶部">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <!-- QRCode.js -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initMobileMenu();
+            initStickyNav();
+            initSmoothScroll();
+            initActiveNavLink();
+            initScrollReveal();
+            initCounters();
+            initQRCode();
+            initQRModal();
+            initParticles();
+            initBackToTop();
+        });
+
+        /* ============================================
+           Mobile Menu
+           ============================================ */
+        function initMobileMenu() {
+            const toggle = document.getElementById('navToggle');
+            const nav = document.getElementById('navbar');
+            const links = document.querySelectorAll('#navLinks .nav__link');
+
+            toggle.addEventListener('click', () => {
+                const isOpen = nav.classList.toggle('nav--open');
+                toggle.setAttribute('aria-expanded', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('nav--open');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        /* ============================================
+           Sticky Nav Shadow
+           ============================================ */
+        function initStickyNav() {
+            const nav = document.getElementById('navbar');
+            const hero = document.getElementById('hero');
+
+            const obs = new IntersectionObserver(([entry]) => {
+                if (entry.isIntersecting) {
+                    nav.classList.remove('nav--scrolled');
+                } else {
+                    nav.classList.add('nav--scrolled');
+                }
+            }, { threshold: 0, rootMargin: `-${nav.offsetHeight}px 0px 0px 0px` });
+
+            obs.observe(hero);
+        }
+
+        /* ============================================
+           Smooth Scroll
+           ============================================ */
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        /* ============================================
+           Active Nav Link (Intersection Observer)
+           ============================================ */
+        function initActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav__link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove('nav__link--active'));
+                        const active = document.querySelector(`.nav__link[href="#${entry.target.id}"]`);
+                        if (active) active.classList.add('nav__link--active');
+                    }
+                });
+            }, { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' });
+
+            sections.forEach(s => observer.observe(s));
+        }
+
+        /* ============================================
+           Scroll Reveal
+           ============================================ */
+        function initScrollReveal() {
+            const revealElements = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            revealElements.forEach(el => observer.observe(el));
+        }
+
+        /* ============================================
+           Counter Animation
+           ============================================ */
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseFloat(el.getAttribute('data-target'));
+                        const isFloat = target % 1 !== 0;
+                        const decimals = isFloat ? 1 : 0;
+                        const duration = 2000;
+                        const start = performance.now();
+
+                        function update(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            // easeOutExpo
+                            const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                            const current = target * eased;
+                            el.textContent = current.toFixed(decimals);
+                            if (progress < 1) {
+                                requestAnimationFrame(update);
+                            }
+                        }
+                        requestAnimationFrame(update);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(c => observer.observe(c));
+        }
+
+        /* ============================================
+           QR Code
+           ============================================ */
+        function initQRCode() {
+            const container = document.getElementById('qr-code-container');
+            if (typeof QRCode === 'undefined') {
+                container.innerHTML = '<p style="color:#999;">二维码加载失败，请手动分享链接</p>';
+                return;
+            }
+            const url = window.location.href;
+            new QRCode(container, {
+                text: url,
+                width: 200,
+                height: 200,
+                colorDark: '#0D2C40',
+                colorLight: '#FFFFFF',
+                correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        /* ============================================
+           QR Modal
+           ============================================ */
+        function initQRModal() {
+            const floatBtn = document.getElementById('qrFloat');
+            const modal = document.getElementById('qrModal');
+            const overlay = document.getElementById('qrOverlay');
+            const closeBtn = document.getElementById('qrClose');
+
+            function open() {
+                modal.classList.add('qr-modal--open');
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
+            }
+            function close() {
+                modal.classList.remove('qr-modal--open');
+                document.body.style.overflow = '';
+                floatBtn.focus();
+            }
+
+            floatBtn.addEventListener('click', open);
+            overlay.addEventListener('click', close);
+            closeBtn.addEventListener('click', close);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('qr-modal--open')) {
+                    close();
+                }
+            });
+        }
+
+        /* ============================================
+           Particle Canvas
+           ============================================ */
+        function initParticles() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 25 : 55;
+
+            let w, h;
+            let particles = [];
+            let mouse = { x: -999, y: -999 };
+
+            function resize() {
+                w = canvas.width = canvas.offsetWidth;
+                h = canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            // Create particles
+            particles = Array.from({ length: particleCount }, () => ({
+                x: Math.random() * w,
+                y: Math.random() * h,
+                size: Math.random() * 3 + 1.5,
+                speedX: (Math.random() - 0.5) * 0.4,
+                speedY: -(Math.random() * 0.6 + 0.2),
+                opacity: Math.random() * 0.5 + 0.15,
+                shape: Math.random() > 0.5 ? 'circle' : 'diamond'
+            }));
+
+            // Mouse move
+            if (!isMobile) {
+                canvas.addEventListener('mousemove', (e) => {
+                    const rect = canvas.getBoundingClientRect();
+                    mouse.x = e.clientX - rect.left;
+                    mouse.y = e.clientY - rect.top;
+                });
+                canvas.addEventListener('mouseleave', () => {
+                    mouse.x = -999;
+                    mouse.y = -999;
+                });
+            }
+
+            function drawDiamond(x, y, size) {
+                ctx.beginPath();
+                ctx.moveTo(x, y - size);
+                ctx.lineTo(x + size * 0.6, y);
+                ctx.lineTo(x, y + size);
+                ctx.lineTo(x - size * 0.6, y);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+
+                particles.forEach(p => {
+                    // Move
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
+                    // Mouse interaction (desktop only)
+                    if (!isMobile) {
+                        const dx = p.x - mouse.x;
+                        const dy = p.y - mouse.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 100) {
+                            const force = (100 - dist) / 100;
+                            p.x += (dx / dist) * force * 2;
+                            p.y += (dy / dist) * force * 2;
+                        }
+                    }
+
+                    // Wrap around
+                    if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+                    if (p.x < -10) p.x = w + 10;
+                    if (p.x > w + 10) p.x = -10;
+
+                    // Draw
+                    ctx.fillStyle = `rgba(243, 156, 18, ${p.opacity})`;
+                    if (p.shape === 'diamond') {
+                        drawDiamond(p.x, p.y, p.size);
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.size / 2, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        /* ============================================
+           Back to Top
+           ============================================ */
+        function initBackToTop() {
+            const btn = document.getElementById('backTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 600) {
+                    btn.classList.add('back-top--visible');
+                } else {
+                    btn.classList.remove('back-top--visible');
+                }
+            }, { passive: true });
+
+            btn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    </script>
+</body>
+</html>
